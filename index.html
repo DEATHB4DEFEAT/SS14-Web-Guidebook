@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8" />
+		<meta name="google" content="notranslate" />
+		<title>Guidebook Test</title>
+		<link
+			rel="icon"
+			type="image/png"
+			href="./favicon.ico"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+			crossorigin="anonymous"
+		/>
+		<style>
+			ul, #guidebooks {
+				list-style-type: none;
+			}
+
+			#guidebooks {
+				margin: 0;
+				padding: 0;
+			}
+
+			.caret {
+				cursor: pointer;
+				-webkit-user-select: none; /* Safari 3.1+ */
+				-moz-user-select: none; /* Firefox 2+ */
+				-ms-user-select: none; /* IE 10+ */
+				user-select: none;
+			}
+
+			.caret::before {
+				content: "\25B6";
+				color: black;
+				display: inline-block;
+				margin-right: 6px;
+			}
+
+			.caret-down::before {
+				-ms-transform: rotate(90deg); /* IE 9 */
+				-webkit-transform: rotate(90deg); /* Safari */
+				transform: rotate(90deg);  
+			}
+
+			.nested {
+				display: none;
+			}
+
+			.active {
+				display: block;
+			}
+		</style>
+
+		<style>
+			/* Main page can't scroll */
+			html, body {
+				background-color: #252525;
+				overflow: hidden;
+			}
+		</style>
+
+		<style>
+			.treeBackground {
+				background-color: #1f1f1f;
+				margin: 8px;
+				float: left;
+			}
+
+			/* But this can scroll */
+			.treeForeground {
+				background-color: #252525;
+				padding: 8px;
+				overflow: scroll;
+			}
+
+			/* Go between treeBackground and contentBackground and take up all vertical space on screen */
+			.separator {
+				background-color: #444444;
+				padding: 5px;
+				float: left;
+				height: 100vh;
+			}
+
+			.contentBackground {
+				background-color: #252526;
+				margin: 8px;
+			}
+
+			/* But this can scroll */
+			.contentForeground {
+				background-color: #303031;
+				padding: 8px;
+				overflow-y: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<noscript>
+			<h1>JavaScript is required to run this application.</h1>
+
+			<p>
+				Please enable JavaScript in your browser and reload the page.
+			</p>
+
+			<p>
+				<a href="https://www.enable-javascript.com/">
+					Click here for instructions on how to enable JavaScript in your browser.
+				</a>
+			</p>
+
+			<p>
+				<a href="https://www.google.com/search?q=how+to+enable+javascript">
+					Or click here to search Google for instructions on how to enable JavaScript in your browser.
+				</a>
+			</p>
+		</noscript>
+
+		<!-- Contents -->
+		<div>
+			<!-- Left navigation bar, contains nested buttons to show each xml document in the right area with drawdown markdown -->
+			<div class="treeBackground">
+				<div class="treeForeground">
+					<ul id="guidebooks"></ul>
+				</div>
+			</div>
+
+			<div class="separator"></div>
+
+			<!-- Right content display, shows formatted text from selected file from the left -->
+			<div class="contentBackground">
+				<div class="contentForeground">
+					<div class="markdown overflow-auto"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Startup, fill nested buttons -->
+		<script type="module">
+			// (Kindly) Get the html from the server
+			let filelist = await fetch('files.please').then((res) => res.text());
+
+			// Remove random "undefined" without a surrounding tag
+			filelist = filelist.replace(/(?!<)undefined(?!\\|>)/g, '');
+
+			// Get the list container
+			const list = document.getElementById('guidebooks');
+
+			// Set the list of files
+			list.innerHTML = filelist;
+
+			// Add the event listeners
+			addCarrots();
+		</script>
+
+		<!-- Startup, placeholder -->
+		<script type="module">
+			import markdown from './scripts/drawdown.js';
+
+			document.querySelector('.markdown').innerHTML =
+				markdown(await fetch('./placeholder.xml').then((res) =>
+					res.text().then(
+						(text) => text.replace('<Document>', '').replace('</Document>', '')
+					)
+				));
+		</script>
+
+
+		<!-- Function to handle the nested lists toggling -->
+		<script>
+			function addCarrots() {
+				// Get all list items with class="caret"
+				var toggler = document.getElementsByClassName("caret");
+				var i;
+
+				// Loop through all list items
+				for (i = 0; i < toggler.length; i++) {
+					// Add onclick event to each list item
+					toggler[i].addEventListener("click", function() {
+						this.parentElement.querySelector(".nested").classList.toggle("active");
+						this.classList.toggle("caret-down");
+					});
+				}
+			}
+		</script>
+	</body>
+</html>
