@@ -57,25 +57,28 @@
 		</style>
 
 		<style>
-			/* Main page can't scroll */
 			html, body {
 				background-color: #252525;
 				overflow: hidden;
+				color: #ffffff;
 			}
 		</style>
 
 		<style>
 			.treeBackground {
 				background-color: #1f1f1f;
-				margin: 8px;
+				padding: 8px;
 				float: left;
+				width: 20vw;
+				height: 100vh;
 			}
 
-			/* But this can scroll */
 			.treeForeground {
 				background-color: #252525;
 				padding: 8px;
-				overflow: scroll;
+				overflow-y: scroll;
+				max-width: 100vw;
+				max-height: 100vh;
 			}
 
 			/* Go between treeBackground and contentBackground and take up all vertical space on screen */
@@ -91,11 +94,12 @@
 				margin: 8px;
 			}
 
-			/* But this can scroll */
 			.contentForeground {
 				background-color: #303031;
 				padding: 8px;
 				overflow-y: scroll;
+				max-width: 100vw;
+				max-height: 100vh;
 			}
 		</style>
 	</head>
