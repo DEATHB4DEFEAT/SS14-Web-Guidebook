@@ -44,7 +44,7 @@ async function getFiles(directory)
 
 function createHtmlFileTree(fileTree)
 {
-    let html;
+    let html = '';
 
     for (const fileOrDirectory of fileTree)
     {
@@ -59,12 +59,11 @@ function createHtmlFileTree(fileTree)
         }
         else
         {
-            html += `${fileOrDirectory.name}`;
+            html += fileOrDirectory.name;
         }
 
         html += `</li>`;
     }
 
-    // console.log(html);
     return html;
 }

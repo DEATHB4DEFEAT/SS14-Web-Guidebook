@@ -35,7 +35,7 @@
 			}
 
 			.caret::before {
-				content: "\25B6";
+				content: '\25B6';
 				color: black;
 				display: inline-block;
 				margin-right: 6px;
@@ -183,9 +183,6 @@
 		<script type="module">
 			// (Kindly) Get the html from the server
 			let filelist = await fetch('files.please').then((res) => res.text());
-
-			// Remove random "undefined" without a surrounding tag
-			filelist = filelist.replace(/(?!<)undefined(?!\\|>)/g, '');
 
 			// Get the list container
 			const list = document.getElementById('guidebooks');
