@@ -1,4 +1,7 @@
 /**
+ * Edited version of drawdown-ss14.js for a more accurate look of SS14's guidebooks
+ * (c) 2023 DEATHB4DEFEAT
+ *
  * drawdown-ss14.js
  * (c) 2023 ZeroDayDaemon
  *
