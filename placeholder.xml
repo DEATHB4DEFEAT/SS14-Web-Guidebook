@@ -1,63 +1,102 @@
 <Document>
-# Standard Operating Procedure
+# drawdown-ss14
 
-[color=#008000]Note[/color] these are not laws, and the group vote of the Heads may alter this as they see fit.
-[color=#a4885c]Make sure to read the Alert Procedures.[/color]
+Tiny Markdown to HTML conversion in JavaScript, optionally Bootstrap styled, Compatible with Space Station 14 Markdown.
 
+Supported Markdown features:
 
-## High Security Areas
+#### Headings
 
-What High Security Areas are, and who should access them.
-- Level one Armory: Non lethal equipment, aay security personnel.
-- Level two Armory: Low grade lethal weaponry, Security Officers and above.
-- Level three Armory: High grade lethal weaponry, Head of Security and Warden only.
-- Command/Head Offices/AI Satellite: Head offices are entirely restricted for entrance without the respective Head present. Command may only be entered under supervision of a Head.
-- Self Destruct Room/Vault: Bolted at all times, access on request of Head.
-- Departments: Unauthorized entrance to a department is trespassing, and may justify a search based on present items.
+Inline styles such as **bold**, *italic*, ***both***, ~~strikethrough~~, `monospace`, --subscript--, and ^^superscript^^.
 
+> Block quotes, including
+> > nested block quotes.
 
-## Medical Evaluation
+```
+Fenced code blocks
+```
 
-Given good medical reason and with documentation, the Chief Medical Officer may declare any on-duty personnel unfit for duty and remove them from their position. This includes other Heads of Staff.
+    Indented code blocks
 
-In order for a medical evaluation to be considered valid, two heads, one of which must be the CMO, must agree that the specified crewmate is unfit for duty.
-If they are unfit for duty the Head of Personnel may demote them to assistant. If demotion is resisted, Security is allowed to detain if necessary.
+1. Numbered lists
+- Unordered lists
+- Nested in other lists
+  a. Lettered lists are an extension to the spec.
+  b. They may be useful for legal documents.
+2. Another entry in my numbered list.
 
+| Tables | Tables | Tables |
+| ------ | ------ | ------ |
+| Cell 1 | Cell 2 | Cell 3 |
+| Cell 4 | Cell 5 | Cell 6 |
+| Cell 7 | Cell 8 | Cell 9 |
 
-## Controlled Substances/Items
+[Links](https://github.com/JulienChebance/bs-drawdown)
 
-Controlled substances are any substances that have been restricted or made illegal under Space Law. The current list of controlled substances is as follows:
-- Space Drugs
-- Chloral Hydrate, specifically any dosage above 15u, when not prescribed by the Psychologist, no matter the case
-- Pure Lysergic Acid Diethylamide, (LSD) sometimes referred to as 'MindBreaker'
-- Pure Ephedrine, when not in the possession of the CMO or Security
-- Pure DesoxyEphedrine, commonly referred to as 'Meth'
-- Any explosive or pyrotechnic compound outside of the Science department testing area
-- Any lethal toxin or toxic substance/compound outside of the Medical chemistry lab
-- Any gases that are not normally found in the atmosphere of the station or station's planet, when not in possession of the CE or Atmospheric Technician
-- Liquid Miasma, when not in possession of the CMO or a Virologist for research purposes only
-- XenoBlood, or the corpse of a Xenomorph
-- Corpium
-- Any reagents, chemicals, or gasses usually possessed or manufactured by members of a hostile entity.
+Fuzzy links:  
+https://odt.space.  
+www.odt.space  
+`http://disabled.link.com`
 
-Controlled Items are items that have been restricted or made illegal under Space Law. Corporate Security forces are considered an 'authorized entity' with respect to the listed clauses. The current list of controlled items is as follows:
-- Any rapid-injection technology, such as chemipens (not medipens), hyposprays, or autoinjectors, when used offensively or simply containing a potentially lethal or illegal substance when not in the possession of the CMO or a Chemist.
-- Containers or devices used to administer or transport controlled or dangerous substances.
-- Any cloning technology designed to rapidly grow an adult clone with fully-developed mental faculties not in possession of the medical department
-- Military Explosives when not in use by Security or otherwise authorized entities. Note that constructive explosives, such as any charges used for mining are not subject to this restriction. Plasma-based explosives are considered Military Weaponry
-- Automatic Weaponry when not in use by Security, another authorized department of Central Command, or an otherwise authorized entity. This refers to any weapon capable of firing multiple shots when the trigger is depressed once, energy or otherwise
-- Any other Weaponry in the possession of personnel who have not been authorized to possess it
-- Hacking Software or Hardware which allows a person to subvert access to ship systems, bypass access restrictions or attack a vessels computer network
-- Devices, equipment, or tools usually possessed or manufactured by members of a hostile entity.
+Variable links:  
+[Wikipedia] is a free online encyclopedia, created and edited by volunteers around the world and hosted by the [Wikimedia Foundation].
+[wikipedia]: https://www.wikipedia.org
+[wikimedia foundation]: https://wikimediafoundation.org
 
+Images:
 
-## Research Operations
+![Images](https://upload.wikimedia.org/wikipedia/commons/4/48/Markdown-mark.svg)
 
-Science employees are permitted to use their lab spaces as they see fit with the following exceptions:
-- Any human experimentation must be done with the full consent of the test subject, and must not have an undue risk of life. - The HoS, CMO, or MG may terminate any human experiment for safety or ethical purposes at their discretion.
-- Self-Experimentation is prohibited and is chargeable with endangerment.
-- Testing of any explosives with risk of penetrating the hull or causing mass destruction must be done at an off-station site.
-- Small arms and larger weapons must also be tested at an off-station site if there is risk to the hull.
-- Distribution of experimental technology to research personnel for testing is permitted.
-- Experimental technology may be provided to crew departments for testing and use with the approval of the department Head.
+---
+
+Color Tags:
+
+[color=#ff0000]Red[/color][color=#00ff00]Green[/color][color=#0000ff]Blue[/color]
+
+[color=#ff0000]Red[/color] and [color=#00ff00]Green[/color] and [color=#0000ff]Blue[/color]
+
+[color=#ff0000]Red[/color]
+
+[color=#00ff00]Green[/color]
+
+[color=#0000ff]Blue[/color]
+
+[color=#00ff00]Inline styles such as **bold**, *italic*, ***both***, ~~strikethrough~~, `monospace`, --subscript--, and ^^superscript^^.[/color]
+
+### Summary...
+
+These are the supported features:
+
+- Block quotes
+- Code blocks
+- Links
+- Images
+- Headings
+- Lists (including lettered lists)
+- Bold
+- Italic
+- Strikethrough
+- Monospace
+- Subscript
+- Horizontal rule
+- Tables
+- Link variables
+- Space Station 14 Color tags
+
+Unsupported Markdown features at this time:
+
+- Line blocks
+- Definition lists
+- Footnotes
+- Twitter/Facebook/YouTube embed
+- Inline math equations
+
+##### Usage
+
+    import markdown from './drawdown-ss14.js'
+    element.innerHTML = markdown(text)
+
+##### License
+
+[MIT](LICENSE)
 </Document>

@@ -12,9 +12,9 @@
  */
 
 const bootstrapClasses = {
-	blockquote: 'border-start border-3 ps-4 py-2 mt-3',
+	blockquote: 'border-start border-3 border-light border-opacity-50 ps-4 py-2 mt-3',
 	h1: 'pb-2 border-bottom border-dark border-opacity-25',
-	pre: 'bg-light py-1 px-3 fs-6',
+	pre: 'bg-dark py-1 px-3 fs-6',
 	table: 'table',
 };
 
